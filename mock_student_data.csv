@@ -1,0 +1,201 @@
+student_id,name,school,department,hours_studied,previous_score,sleep_hours,retention_score
+STU0001,Student 1,Delta University,Computer Science,4.4,78.5,4.6,51.1
+STU0002,Student 2,Gamma Tech,Mechanical Engineering,9.6,45.0,9.4,61.6
+STU0003,Student 3,Alpha College of Engineering,Computer Science,7.6,49.7,7.0,56.2
+STU0004,Student 4,Delta University,Mechanical Engineering,6.4,93.9,9.0,69.5
+STU0005,Student 5,Alpha College of Engineering,Information Technology,2.4,76.4,5.9,46.8
+STU0006,Student 6,Gamma Tech,Mechanical Engineering,2.4,40.6,9.4,36.2
+STU0007,Student 7,Alpha College of Engineering,Electronics,1.5,46.1,6.3,45.5
+STU0008,Student 8,Delta University,Information Technology,8.8,79.8,4.1,66.6
+STU0009,Student 9,Alpha College of Engineering,Electronics,6.4,40.3,9.4,50.7
+STU0010,Student 10,Beta Institute of Science,Computer Science,7.4,49.6,4.5,52.1
+STU0011,Student 11,Gamma Tech,Computer Science,1.2,72.9,5.9,44.0
+STU0012,Student 12,Gamma Tech,Computer Science,9.7,81.5,9.7,80.1
+STU0013,Student 13,Gamma Tech,Mechanical Engineering,8.5,79.1,9.7,79.6
+STU0014,Student 14,Delta University,Information Technology,2.9,53.5,7.4,48.8
+STU0015,Student 15,Gamma Tech,Computer Science,2.6,82.7,7.8,53.9
+STU0016,Student 16,Beta Institute of Science,Computer Science,2.7,54.2,6.7,40.1
+STU0017,Student 17,Delta University,Information Technology,3.7,59.5,5.8,45.2
+STU0018,Student 18,Beta Institute of Science,Computer Science,5.7,84.8,6.0,51.5
+STU0019,Student 19,Alpha College of Engineering,Electronics,4.9,79.0,8.0,54.7
+STU0020,Student 20,Alpha College of Engineering,Information Technology,3.6,91.0,8.5,71.1
+STU0021,Student 21,Alpha College of Engineering,Information Technology,6.5,79.5,8.7,77.0
+STU0022,Student 22,Alpha College of Engineering,Information Technology,2.3,74.1,8.7,52.6
+STU0023,Student 23,Beta Institute of Science,Electronics,3.6,45.6,4.5,41.1
+STU0024,Student 24,Delta University,Information Technology,4.3,62.1,7.0,53.2
+STU0025,Student 25,Delta University,Electronics,5.1,55.9,4.3,61.8
+STU0026,Student 26,Gamma Tech,Information Technology,8.1,54.6,7.3,66.2
+STU0027,Student 27,Beta Institute of Science,Mechanical Engineering,2.8,98.4,6.6,60.4
+STU0028,Student 28,Alpha College of Engineering,Computer Science,5.6,63.6,9.3,56.2
+STU0029,Student 29,Beta Institute of Science,Mechanical Engineering,6.3,93.5,6.1,60.6
+STU0030,Student 30,Gamma Tech,Computer Science,1.4,77.9,4.7,45.8
+STU0031,Student 31,Gamma Tech,Electronics,6.5,87.7,4.9,60.4
+STU0032,Student 32,Beta Institute of Science,Mechanical Engineering,2.5,70.2,8.6,45.7
+STU0033,Student 33,Beta Institute of Science,Information Technology,1.6,74.6,7.7,46.8
+STU0034,Student 34,Beta Institute of Science,Computer Science,9.5,69.6,4.6,60.2
+STU0035,Student 35,Delta University,Computer Science,9.7,51.7,4.5,67.2
+STU0036,Student 36,Alpha College of Engineering,Mechanical Engineering,8.3,83.3,8.2,79.0
+STU0037,Student 37,Beta Institute of Science,Electronics,3.7,56.8,4.4,42.8
+STU0038,Student 38,Beta Institute of Science,Mechanical Engineering,1.9,41.5,8.9,47.5
+STU0039,Student 39,Beta Institute of Science,Electronics,7.2,78.7,8.2,69.8
+STU0040,Student 40,Gamma Tech,Electronics,5.0,50.6,4.5,39.8
+STU0041,Student 41,Gamma Tech,Computer Science,2.1,96.4,4.5,61.5
+STU0042,Student 42,Delta University,Mechanical Engineering,5.5,97.2,9.9,77.8
+STU0043,Student 43,Alpha College of Engineering,Mechanical Engineering,1.3,94.9,6.2,49.2
+STU0044,Student 44,Delta University,Electronics,9.2,62.2,6.2,63.9
+STU0045,Student 45,Alpha College of Engineering,Mechanical Engineering,3.3,40.9,8.9,39.7
+STU0046,Student 46,Gamma Tech,Information Technology,7.0,95.7,9.7,71.6
+STU0047,Student 47,Gamma Tech,Information Technology,3.8,65.7,9.9,62.2
+STU0048,Student 48,Gamma Tech,Mechanical Engineering,5.7,98.0,8.5,82.8
+STU0049,Student 49,Delta University,Mechanical Engineering,5.9,97.8,6.3,62.4
+STU0050,Student 50,Beta Institute of Science,Electronics,2.7,91.2,4.5,56.3
+STU0051,Student 51,Beta Institute of Science,Information Technology,9.7,57.7,8.7,66.3
+STU0052,Student 52,Gamma Tech,Information Technology,8.0,63.1,7.4,61.4
+STU0053,Student 53,Beta Institute of Science,Computer Science,9.5,91.1,6.5,74.9
+STU0054,Student 54,Beta Institute of Science,Electronics,9.1,59.0,9.4,65.3
+STU0055,Student 55,Delta University,Computer Science,6.4,50.2,4.7,48.8
+STU0056,Student 56,Alpha College of Engineering,Information Technology,9.3,73.4,7.0,67.0
+STU0057,Student 57,Gamma Tech,Electronics,1.8,96.2,4.1,53.3
+STU0058,Student 58,Gamma Tech,Mechanical Engineering,2.8,81.8,6.8,54.4
+STU0059,Student 59,Delta University,Electronics,1.4,74.2,4.3,41.4
+STU0060,Student 60,Delta University,Mechanical Engineering,3.9,45.8,4.7,35.0
+STU0061,Student 61,Beta Institute of Science,Mechanical Engineering,4.5,76.9,4.7,50.8
+STU0062,Student 62,Gamma Tech,Electronics,3.4,99.4,7.9,69.7
+STU0063,Student 63,Alpha College of Engineering,Mechanical Engineering,8.5,48.4,8.5,64.2
+STU0064,Student 64,Delta University,Computer Science,4.2,71.1,7.5,51.2
+STU0065,Student 65,Alpha College of Engineering,Information Technology,3.5,92.6,9.8,67.7
+STU0066,Student 66,Alpha College of Engineering,Mechanical Engineering,5.9,84.4,6.2,67.7
+STU0067,Student 67,Gamma Tech,Computer Science,2.3,81.8,5.7,42.6
+STU0068,Student 68,Gamma Tech,Mechanical Engineering,8.2,82.1,9.2,78.7
+STU0069,Student 69,Delta University,Information Technology,1.7,61.6,5.3,37.0
+STU0070,Student 70,Gamma Tech,Computer Science,9.9,57.6,9.8,75.1
+STU0071,Student 71,Gamma Tech,Information Technology,8.0,88.6,4.1,63.6
+STU0072,Student 72,Gamma Tech,Information Technology,2.8,88.6,9.8,54.4
+STU0073,Student 73,Alpha College of Engineering,Computer Science,1.0,92.0,4.3,40.3
+STU0074,Student 74,Delta University,Computer Science,8.3,94.8,9.3,81.9
+STU0075,Student 75,Beta Institute of Science,Computer Science,7.4,70.7,7.2,66.0
+STU0076,Student 76,Alpha College of Engineering,Electronics,7.6,70.1,10.0,66.1
+STU0077,Student 77,Gamma Tech,Computer Science,7.9,87.9,4.4,71.1
+STU0078,Student 78,Alpha College of Engineering,Computer Science,1.7,79.0,7.3,42.9
+STU0079,Student 79,Gamma Tech,Computer Science,4.2,82.1,9.8,64.8
+STU0080,Student 80,Gamma Tech,Computer Science,2.0,87.7,7.1,49.4
+STU0081,Student 81,Alpha College of Engineering,Mechanical Engineering,8.8,93.4,7.8,76.0
+STU0082,Student 82,Delta University,Electronics,6.6,60.3,8.2,60.5
+STU0083,Student 83,Gamma Tech,Information Technology,4.0,62.5,6.7,46.1
+STU0084,Student 84,Delta University,Computer Science,1.6,45.6,7.8,36.6
+STU0085,Student 85,Beta Institute of Science,Mechanical Engineering,3.8,74.7,7.5,61.3
+STU0086,Student 86,Gamma Tech,Mechanical Engineering,3.9,42.2,9.4,44.6
+STU0087,Student 87,Delta University,Mechanical Engineering,7.6,67.9,4.3,62.6
+STU0088,Student 88,Delta University,Information Technology,6.7,72.6,5.7,55.0
+STU0089,Student 89,Beta Institute of Science,Computer Science,9.0,57.2,9.7,71.9
+STU0090,Student 90,Delta University,Electronics,5.2,75.4,9.3,71.8
+STU0091,Student 91,Delta University,Electronics,2.1,41.8,6.7,24.1
+STU0092,Student 92,Beta Institute of Science,Mechanical Engineering,7.4,42.2,7.7,50.6
+STU0093,Student 93,Gamma Tech,Information Technology,7.8,89.4,5.7,73.5
+STU0094,Student 94,Delta University,Information Technology,6.1,61.6,5.1,52.0
+STU0095,Student 95,Delta University,Information Technology,7.9,47.6,6.8,58.3
+STU0096,Student 96,Delta University,Electronics,5.4,71.3,6.1,54.1
+STU0097,Student 97,Alpha College of Engineering,Mechanical Engineering,5.7,86.2,7.5,67.0
+STU0098,Student 98,Beta Institute of Science,Computer Science,4.8,52.9,4.5,43.9
+STU0099,Student 99,Alpha College of Engineering,Electronics,1.2,77.4,9.8,60.2
+STU0100,Student 100,Beta Institute of Science,Mechanical Engineering,2.0,45.1,9.9,45.1
+STU0101,Student 101,Gamma Tech,Mechanical Engineering,1.3,43.1,8.2,39.2
+STU0102,Student 102,Gamma Tech,Computer Science,6.7,71.9,7.2,61.3
+STU0103,Student 103,Delta University,Computer Science,3.8,72.4,5.9,49.7
+STU0104,Student 104,Beta Institute of Science,Computer Science,5.6,78.2,8.9,63.6
+STU0105,Student 105,Gamma Tech,Information Technology,9.2,83.6,8.1,79.1
+STU0106,Student 106,Beta Institute of Science,Computer Science,3.2,98.6,5.0,57.0
+STU0107,Student 107,Gamma Tech,Mechanical Engineering,4.7,71.0,9.5,62.9
+STU0108,Student 108,Alpha College of Engineering,Computer Science,7.8,59.4,8.9,75.4
+STU0109,Student 109,Gamma Tech,Mechanical Engineering,3.1,87.7,9.7,68.0
+STU0110,Student 110,Alpha College of Engineering,Electronics,1.7,56.2,8.4,42.7
+STU0111,Student 111,Gamma Tech,Information Technology,3.6,66.3,7.7,58.7
+STU0112,Student 112,Delta University,Electronics,2.5,44.7,6.5,36.2
+STU0113,Student 113,Alpha College of Engineering,Electronics,9.4,41.5,9.6,53.7
+STU0114,Student 114,Gamma Tech,Mechanical Engineering,8.3,97.8,9.2,77.3
+STU0115,Student 115,Delta University,Electronics,6.7,90.2,4.3,55.4
+STU0116,Student 116,Alpha College of Engineering,Mechanical Engineering,8.8,81.8,4.2,65.8
+STU0117,Student 117,Delta University,Computer Science,8.2,64.5,6.3,63.1
+STU0118,Student 118,Beta Institute of Science,Computer Science,2.7,50.4,8.9,54.3
+STU0119,Student 119,Beta Institute of Science,Mechanical Engineering,9.0,49.4,9.9,68.3
+STU0120,Student 120,Alpha College of Engineering,Computer Science,5.9,55.0,4.9,48.3
+STU0121,Student 121,Gamma Tech,Information Technology,8.3,73.0,7.6,73.3
+STU0122,Student 122,Alpha College of Engineering,Electronics,9.1,82.9,6.3,61.9
+STU0123,Student 123,Delta University,Information Technology,3.9,79.6,9.8,64.2
+STU0124,Student 124,Gamma Tech,Electronics,2.0,56.8,9.1,50.6
+STU0125,Student 125,Beta Institute of Science,Computer Science,3.1,97.3,9.0,58.7
+STU0126,Student 126,Gamma Tech,Information Technology,4.8,84.3,6.8,67.6
+STU0127,Student 127,Beta Institute of Science,Computer Science,8.4,73.3,6.5,69.1
+STU0128,Student 128,Gamma Tech,Electronics,8.7,76.7,5.6,66.1
+STU0129,Student 129,Gamma Tech,Mechanical Engineering,1.1,65.2,4.3,41.1
+STU0130,Student 130,Gamma Tech,Mechanical Engineering,5.6,54.9,9.2,68.5
+STU0131,Student 131,Delta University,Information Technology,4.8,61.4,8.9,57.5
+STU0132,Student 132,Delta University,Computer Science,3.0,85.5,10.0,64.4
+STU0133,Student 133,Alpha College of Engineering,Computer Science,2.1,40.9,10.0,40.2
+STU0134,Student 134,Alpha College of Engineering,Information Technology,4.0,47.0,7.3,41.3
+STU0135,Student 135,Beta Institute of Science,Mechanical Engineering,9.5,42.8,8.6,66.9
+STU0136,Student 136,Delta University,Electronics,3.9,42.4,9.7,43.8
+STU0137,Student 137,Beta Institute of Science,Information Technology,5.7,91.3,9.1,72.1
+STU0138,Student 138,Alpha College of Engineering,Electronics,7.3,82.2,5.5,63.4
+STU0139,Student 139,Beta Institute of Science,Mechanical Engineering,4.3,68.5,6.7,56.0
+STU0140,Student 140,Alpha College of Engineering,Computer Science,9.7,45.9,4.8,58.8
+STU0141,Student 141,Delta University,Mechanical Engineering,9.7,69.5,9.7,81.4
+STU0142,Student 142,Gamma Tech,Information Technology,3.3,68.4,7.6,49.9
+STU0143,Student 143,Delta University,Computer Science,5.5,50.4,5.4,46.0
+STU0144,Student 144,Beta Institute of Science,Information Technology,3.7,66.0,8.0,48.7
+STU0145,Student 145,Beta Institute of Science,Information Technology,3.6,63.9,7.7,49.5
+STU0146,Student 146,Delta University,Mechanical Engineering,1.3,77.0,6.1,49.0
+STU0147,Student 147,Delta University,Information Technology,6.5,78.1,4.7,63.8
+STU0148,Student 148,Alpha College of Engineering,Mechanical Engineering,5.5,42.7,8.0,45.1
+STU0149,Student 149,Beta Institute of Science,Computer Science,1.5,62.5,7.1,48.0
+STU0150,Student 150,Beta Institute of Science,Mechanical Engineering,3.5,77.6,8.6,65.6
+STU0151,Student 151,Delta University,Computer Science,9.2,70.2,7.1,71.9
+STU0152,Student 152,Gamma Tech,Mechanical Engineering,3.2,91.4,9.1,73.6
+STU0153,Student 153,Beta Institute of Science,Electronics,2.3,79.5,7.3,49.5
+STU0154,Student 154,Gamma Tech,Electronics,5.4,49.8,7.4,44.6
+STU0155,Student 155,Delta University,Information Technology,9.9,44.2,9.3,56.9
+STU0156,Student 156,Delta University,Mechanical Engineering,3.2,78.5,6.4,61.3
+STU0157,Student 157,Alpha College of Engineering,Mechanical Engineering,7.0,41.6,4.8,50.7
+STU0158,Student 158,Beta Institute of Science,Computer Science,7.9,75.1,4.2,61.7
+STU0159,Student 159,Gamma Tech,Information Technology,3.1,96.4,8.5,66.4
+STU0160,Student 160,Alpha College of Engineering,Mechanical Engineering,7.6,74.5,7.7,62.3
+STU0161,Student 161,Beta Institute of Science,Information Technology,4.3,63.3,8.2,66.9
+STU0162,Student 162,Alpha College of Engineering,Electronics,6.7,78.6,5.3,62.7
+STU0163,Student 163,Delta University,Mechanical Engineering,6.7,67.5,4.8,57.3
+STU0164,Student 164,Beta Institute of Science,Mechanical Engineering,5.8,72.7,4.1,58.4
+STU0165,Student 165,Alpha College of Engineering,Information Technology,1.8,96.5,6.1,58.6
+STU0166,Student 166,Alpha College of Engineering,Mechanical Engineering,8.5,63.2,7.5,67.0
+STU0167,Student 167,Gamma Tech,Information Technology,3.9,97.7,6.4,59.5
+STU0168,Student 168,Alpha College of Engineering,Mechanical Engineering,2.7,94.3,6.6,61.4
+STU0169,Student 169,Beta Institute of Science,Computer Science,1.4,51.7,9.4,53.1
+STU0170,Student 170,Beta Institute of Science,Information Technology,6.3,44.2,6.1,55.5
+STU0171,Student 171,Gamma Tech,Mechanical Engineering,7.1,46.0,7.1,61.8
+STU0172,Student 172,Beta Institute of Science,Electronics,1.1,41.1,8.7,34.7
+STU0173,Student 173,Delta University,Mechanical Engineering,5.6,45.7,6.4,42.9
+STU0174,Student 174,Beta Institute of Science,Electronics,3.0,81.0,7.7,56.3
+STU0175,Student 175,Beta Institute of Science,Electronics,6.8,44.3,9.2,56.8
+STU0176,Student 176,Alpha College of Engineering,Computer Science,2.6,59.1,9.7,56.2
+STU0177,Student 177,Alpha College of Engineering,Information Technology,7.2,90.7,4.9,59.2
+STU0178,Student 178,Beta Institute of Science,Mechanical Engineering,4.5,41.4,9.6,56.8
+STU0179,Student 179,Gamma Tech,Computer Science,9.4,88.9,7.0,77.0
+STU0180,Student 180,Alpha College of Engineering,Mechanical Engineering,2.2,56.9,5.5,38.4
+STU0181,Student 181,Gamma Tech,Electronics,4.1,47.1,6.8,39.5
+STU0182,Student 182,Beta Institute of Science,Information Technology,2.0,81.8,9.9,50.3
+STU0183,Student 183,Beta Institute of Science,Mechanical Engineering,9.3,77.7,7.0,77.1
+STU0184,Student 184,Delta University,Mechanical Engineering,8.9,92.6,6.0,76.1
+STU0185,Student 185,Alpha College of Engineering,Electronics,3.3,84.1,7.8,52.8
+STU0186,Student 186,Beta Institute of Science,Mechanical Engineering,6.9,88.2,5.4,60.5
+STU0187,Student 187,Delta University,Mechanical Engineering,8.4,56.9,4.5,55.1
+STU0188,Student 188,Alpha College of Engineering,Electronics,6.0,50.6,4.8,56.1
+STU0189,Student 189,Beta Institute of Science,Computer Science,5.8,85.0,4.8,59.6
+STU0190,Student 190,Beta Institute of Science,Electronics,3.2,88.4,4.9,47.2
+STU0191,Student 191,Alpha College of Engineering,Computer Science,1.8,99.4,4.8,53.7
+STU0192,Student 192,Alpha College of Engineering,Information Technology,9.1,64.8,7.8,67.5
+STU0193,Student 193,Alpha College of Engineering,Computer Science,9.1,62.3,5.1,48.9
+STU0194,Student 194,Beta Institute of Science,Computer Science,6.7,86.6,6.1,66.6
+STU0195,Student 195,Beta Institute of Science,Information Technology,4.1,60.4,9.4,53.9
+STU0196,Student 196,Delta University,Computer Science,4.1,95.8,6.8,67.9
+STU0197,Student 197,Gamma Tech,Electronics,7.5,91.5,8.0,84.5
+STU0198,Student 198,Alpha College of Engineering,Computer Science,9.1,65.7,5.0,69.2
+STU0199,Student 199,Beta Institute of Science,Information Technology,9.0,85.1,5.2,69.9
+STU0200,Student 200,Beta Institute of Science,Electronics,8.0,85.3,4.2,61.1

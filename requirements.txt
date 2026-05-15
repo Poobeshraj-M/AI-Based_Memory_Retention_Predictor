@@ -1,0 +1,14 @@
+flask
+flask-sqlalchemy
+flask-login
+werkzeug
+pandas
+scikit-learn
+python-docx
+joblib
+fpdf2
+matplotlib
+openpyxl
+pymysql
+python-dotenv
+cryptography

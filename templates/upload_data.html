@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Data - Memory Retention Predictor{% endblock %}
+
+{% block content %}
+<div class="glass-panel">
+    <h1 class="text-gradient">Data Ingestion Module</h1>
+    <p>Upload a CSV or Excel file containing student historical data to retrain the Memory Retention AI Model.</p>
+</div>
+
+<div class="dashboard-grid">
+    <div class="glass-panel" style="margin-bottom: 0;">
+        <h2>Upload Dataset</h2>
+        <form action="{{ url_for('upload_data') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-group" style="margin-top: 1.5rem;">
+                <label for="dataset">Select CSV or Excel File</label>
+                <input type="file" id="dataset" name="dataset" class="form-control" accept=".csv, .xlsx, .xls" required style="padding: 2rem 1rem; border: 2px dashed var(--glass-border); text-align: center;">
+            </div>
+            <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.5rem;">
+                <strong>Required columns:</strong> <code>hours_studied</code>, <code>previous_score</code>, <code>sleep_hours</code><br>
+                <span style="color: #6ee7b7;">Note: Include <code>retention_score</code> to train the AI, or omit it to have the AI predict scores for you!</span>
+            </p>
+            <button type="submit" class="btn btn-primary">Upload & Train AI</button>
+        </form>
+    </div>
+
+    <div class="glass-panel" style="margin-bottom: 0;">
+        <h2>Generate Mock Data</h2>
+        <p style="margin-bottom: 1.5rem; color: #94a3b8;">Don't have a dataset? Use our engine to generate a realistic mock dataset of 200 students and automatically train the system.</p>
+        <form action="{{ url_for('generate_mock') }}" method="POST">
+            <button type="submit" class="btn" style="background: rgba(139, 92, 246, 0.2); border: 1px solid var(--accent-color); color: #c4b5fd;">Generate & Train</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

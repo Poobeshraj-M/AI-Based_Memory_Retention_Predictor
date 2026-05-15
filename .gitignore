@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.vscode/
+instance/
+*.db
+*.log
+*.csv
+!mock_student_data.csv
+memory_model.pkl

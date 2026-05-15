@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Predict Retention - Memory Retention Predictor{% endblock %}
+
+{% block content %}
+<div class="glass-panel">
+    <h1 class="text-gradient">Individual Student Prediction</h1>
+    <p>Enter the details of a single student to predict their memory retention score using the trained AI model.</p>
+</div>
+
+<div class="dashboard-grid">
+    <div class="glass-panel" style="margin-bottom: 0;">
+        <h2>Input Details</h2>
+        <form action="{{ url_for('predict') }}" method="POST">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label for="student_name">Student Name</label>
+                    <input type="text" id="student_name" name="student_name" class="form-control" required value="{{ form_data.student_name if form_data else '' }}">
+                </div>
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label for="student_id">Student ID</label>
+                    <input type="text" id="student_id" name="student_id" class="form-control" required value="{{ form_data.student_id if form_data else '' }}">
+                </div>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                    <label for="school">College</label>
+                    <input type="text" id="school" name="school" class="form-control" required value="{{ form_data.school if form_data else '' }}">
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="department" class="form-control" style="background-color: #1e293b;" required>
+                        <option value="">Select Department</option>
+                        {% set depts = [
+                            'Artificial Intelligence and Data Science',
+                            'Artificial Intelligence and Machine Learning',
+                            'Computer Science and Engineering',
+                            'Information Technology',
+                            'Mechanical Engineering',
+                            'Electrical Engineering',
+                            'Civil Engineering',
+                            'Electronics and Communication',
+                            'Arts & Science',
+                            'Business & Management'
+                        ] %}
+                        {% for dept in depts %}
+                        <option value="{{ dept }}" {% if form_data and form_data.department == dept %}selected{% endif %}>{{ dept }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                <label for="hours_studied">Hours Studied (0-24)</label>
+                <input type="number" step="0.1" id="hours_studied" name="hours_studied" class="form-control" required value="{{ form_data.hours_studied if form_data else '' }}">
+            </div>
+            <div class="form-group">
+                <label for="previous_score">Previous Score (0-100)</label>
+                <input type="number" step="0.1" id="previous_score" name="previous_score" class="form-control" required value="{{ form_data.previous_score if form_data else '' }}">
+            </div>
+            <div class="form-group">
+                <label for="sleep_hours">Sleep Hours (0-24)</label>
+                <input type="number" step="0.1" id="sleep_hours" name="sleep_hours" class="form-control" required value="{{ form_data.sleep_hours if form_data else '' }}">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Predict Retention Score</button>
+        </form>
+    </div>
+
+    <div class="glass-panel stat-card" style="margin-bottom: 0;">
+        <h3>Predicted Retention Score</h3>
+        {% if prediction is not none %}
+            <div class="value text-gradient" style="font-size: 4rem; margin: 1rem 0;">{{ "%.1f"|format(prediction) }}%</div>
+            <p style="color: #94a3b8; text-align: center; margin-bottom: 1.5rem;">
+                Based on {{ form_data.hours_studied if form_data else 0 }} hours studied, 
+                a previous score of {{ form_data.previous_score if form_data else 0 }}, 
+                and {{ form_data.sleep_hours if form_data else 0 }} hours of sleep.
+            </p>
+            
+            <div style="margin: 2rem 0; height: 300px;">
+                <canvas id="predictionChart" 
+                    data-hours="{{ form_data.hours_studied if form_data else 0 }}"
+                    data-score="{{ form_data.previous_score if form_data else 0 }}"
+                    data-sleep="{{ form_data.sleep_hours if form_data else 0 }}"
+                    data-prediction="{{ prediction }}"></canvas>
+            </div>
+
+            {% if record_id %}
+            <div style="text-align: center;">
+                <a href="{{ url_for('download_single_report', record_id=record_id) }}" class="btn" style="background: rgba(16, 185, 129, 0.2); border: 1px solid var(--success-color); color: #6ee7b7;">Download PDF Report</a>
+            </div>
+            {% endif %}
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const canvas = document.getElementById('predictionChart');
+                    if (!canvas) return;
+                    
+                    const hours = parseFloat(canvas.dataset.hours) * 10;
+                    const score = parseFloat(canvas.dataset.score);
+                    const sleep = parseFloat(canvas.dataset.sleep) * 10;
+                    const prediction = parseFloat(canvas.dataset.prediction);
+
+                    const ctx = canvas.getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Hours Studied (x10)', 'Previous Score', 'Sleep Hours (x10)', 'Predicted Retention'],
+                            datasets: [{
+                                label: 'Student Metrics',
+                                data: [hours, score, sleep, prediction],
+                                backgroundColor: [
+                                    'rgba(99, 102, 241, 0.5)',
+                                    'rgba(168, 85, 247, 0.5)',
+                                    'rgba(236, 72, 153, 0.5)',
+                                    'rgba(16, 185, 129, 0.5)'
+                                ],
+                                borderColor: [
+                                    '#6366f1',
+                                    '#a855f7',
+                                    '#ec4899',
+                                    '#10b981'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    max: 100,
+                                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                                    ticks: { color: '#94a3b8' }
+                                },
+                                x: {
+                                    ticks: { color: '#94a3b8' }
+                                }
+                            },
+                            plugins: {
+                                legend: { display: false }
+                            }
+                        }
+                    });
+                });
+            </script>
+        {% else %}
+            <div class="value" style="font-size: 4rem; margin: 1rem 0; color: #475569;">--%</div>
+            <p style="color: #64748b; text-align: center;">Enter details on the left and click predict.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

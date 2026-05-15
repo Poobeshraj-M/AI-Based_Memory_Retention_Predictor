@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - Memory Retention Predictor{% endblock %}
+
+{% block content %}
+<div class="glass-panel">
+    <h1 class="text-gradient">System Administrator Dashboard</h1>
+    <p>Welcome back, {{ current_user.username }}.</p>
+</div>
+
+<div class="dashboard-grid">
+    <div class="glass-panel stat-card">
+        <h3>Total Users</h3>
+        <div class="value text-gradient">{{ users|length }}</div>
+    </div>
+    <div class="glass-panel stat-card">
+        <h3>System Logs</h3>
+        <div class="value text-gradient">{{ logs|length }}</div>
+    </div>
+</div>
+
+<div class="glass-panel">
+    <h2>User Management</h2>
+    <div style="background: rgba(15, 23, 42, 0.4); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid var(--glass-border);">
+        <h3 style="margin-bottom: 1rem; color: #e2e8f0; font-size: 1.1rem;">Create New Account</h3>
+        <form action="{{ url_for('add_user') }}" method="POST" style="display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap;">
+            <div class="form-group" style="margin-bottom: 0; flex: 1; min-width: 200px;">
+                <label for="new_username">Username</label>
+                <input type="text" id="new_username" name="new_username" class="form-control" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 0; flex: 1; min-width: 200px;">
+                <label for="new_password">Password</label>
+                <input type="password" id="new_password" name="new_password" class="form-control" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 0; flex: 1; min-width: 150px;">
+                <label for="role">Role</label>
+                <select id="role" name="role" class="form-control" style="background-color: #1e293b;">
+                    <option value="staff">Staff</option>
+                    <option value="admin">System Admin</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding: 0.75rem 2rem;">Create Account</button>
+        </form>
+    </div>
+    <div style="overflow-x: auto;">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Joined</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ user.username }}</td>
+                    <td><span class="badge">{{ user.role|title }}</span></td>
+                    <td>{{ user.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>
+                        {% if user.id != current_user.id %}
+                        <form action="{{ url_for('delete_user', user_id=user.id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                            <button type="submit" class="btn" style="background: rgba(239, 68, 68, 0.2); border: 1px solid var(--danger-color); color: #fca5a5; padding: 0.25rem 0.5rem; font-size: 0.8rem;">Delete</button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="glass-panel">
+    <h2>Student Prediction History</h2>
+    <div style="overflow-x: auto;">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>College</th>
+                    <th>Department</th>
+                    <th>Score</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in student_records %}
+                <tr>
+                    <td>{{ record.created_at.strftime('%Y-%m-%d %H:%M') }}</td>
+                    <td>{{ record.student_name }}</td>
+                    <td>{{ record.student_id }}</td>
+                    <td>{{ record.school }}</td>
+                    <td>{{ record.department }}</td>
+                    <td><span class="text-gradient" style="font-weight: 700;">{{ "%.1f"|format(record.predicted_retention) }}%</span></td>
+                    <td>
+                        <form action="{{ url_for('delete_record', record_id=record.id) }}" method="POST" onsubmit="return confirm('Delete this record?');">
+                            <button type="submit" class="btn" style="background: rgba(239, 68, 68, 0.2); border: 1px solid var(--danger-color); color: #fca5a5; padding: 0.25rem 0.5rem; font-size: 0.8rem;">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% if not student_records %}
+                <tr>
+                    <td colspan="7" style="text-align: center; color: #94a3b8;">No student predictions have been saved yet.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="glass-panel">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="margin-bottom: 0;">Recent Activity Logs</h2>
+        <form action="{{ url_for('clear_logs') }}" method="POST" onsubmit="return confirm('Are you sure you want to delete all system logs? This action cannot be undone.');">
+            <button type="submit" class="btn" style="background: rgba(239, 68, 68, 0.2); border: 1px solid var(--danger-color); color: #fca5a5; padding: 0.5rem 1rem;">Clear All Logs</button>
+        </form>
+    </div>
+    <div style="overflow-x: auto;">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>User ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                    <td>{{ log.user_id }}</td>
+                    <td>{{ log.action }}</td>
+                </tr>
+                {% endfor %}
+                {% if not logs %}
+                <tr>
+                    <td colspan="3" style="text-align: center; color: #94a3b8;">No recent activity.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

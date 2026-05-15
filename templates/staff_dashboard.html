@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Staff Dashboard - Memory Retention Predictor{% endblock %}
+
+{% block content %}
+<div class="glass-panel">
+    <h1 class="text-gradient">Staff Dashboard</h1>
+    <p>Welcome back, <strong>{{ user.username|title }}</strong>! Let's analyze student memory retention.</p>
+</div>
+
+<div class="dashboard-grid" style="margin-top: 1rem; margin-bottom: 2rem;">
+    <div class="glass-panel stat-card" style="margin-bottom: 0;">
+        <h3>Upload New Data</h3>
+        <p style="text-align: center; color: #94a3b8; margin: 1rem 0; font-size: 0.9rem;">Ingest fresh student data and retrain the AI model for better predictions.</p>
+        <a href="{{ url_for('upload_data') }}" class="btn btn-primary">Go to Upload</a>
+    </div>
+    
+    <div class="glass-panel stat-card" style="margin-bottom: 0;">
+        <h3>Analytics Dashboard</h3>
+        <p style="text-align: center; color: #94a3b8; margin: 1rem 0; font-size: 0.9rem;">View interactive charts and visual breakdown of memory retention predictions.</p>
+        <a href="{{ url_for('analytics_dashboard') }}" class="btn btn-primary">View Analytics</a>
+    </div>
+</div>
+{% endblock %}

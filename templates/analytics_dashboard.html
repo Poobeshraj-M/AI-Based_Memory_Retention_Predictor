@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Memory Retention Predictor{% endblock %}
+
+{% block content %}
+<div class="glass-panel" style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+        <h1 class="text-gradient">Performance Dashboard</h1>
+        <p>Visualize the memory retention predictions and underlying factors.</p>
+    </div>
+    {% if chart_data %}
+    <div style="display: flex; gap: 1rem;">
+        <form action="{{ url_for('clear_data') }}" method="POST" onsubmit="return confirm('Are you sure you want to clear your dashboard? This will remove your uploaded dataset and history.')">
+            <button type="submit" class="btn" style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #fca5a5;">Clear Dashboard</button>
+        </form>
+        <a href="{{ url_for('download_bulk_report') }}" class="btn btn-primary">Download Bulk PDF Report</a>
+    </div>
+    {% endif %}
+</div>
+
+{% if chart_data %}
+<div class="dashboard-grid">
+    <div class="glass-panel">
+        <h3 style="margin-bottom: 1rem; color: #e2e8f0;">Retention Score vs. Hours Studied</h3>
+        <div style="position: relative; height: 300px; width: 100%;">
+            <canvas id="retentionChart"></canvas>
+        </div>
+    </div>
+    <div class="glass-panel">
+        <h3 style="margin-bottom: 1rem; color: #e2e8f0;">Sleep Impact on Retention</h3>
+        <div style="position: relative; height: 300px; width: 100%;">
+            <canvas id="sleepChart"></canvas>
+        </div>
+    </div>
+</div>
+<div class="glass-panel" style="margin-top: 2rem;">
+    <h3 style="margin-bottom: 1rem; color: #e2e8f0;">Score Distribution</h3>
+    <div style="position: relative; height: 400px; width: 100%;">
+        <canvas id="distributionChart"></canvas>
+    </div>
+</div>
+
+<div class="glass-panel" style="margin-top: 2rem;">
+    <h3 style="margin-bottom: 1rem; color: #e2e8f0;">Individual Student Analysis</h3>
+    <div style="overflow-x: auto;">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>College</th>
+                    <th>Department</th>
+                    <th>Retention Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in table_rows %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.student_id }}</td>
+                    <td>{{ row.college }}</td>
+                    <td>{{ row.department }}</td>
+                    <td><span class="text-gradient" style="font-weight: 700;">{{ "%.1f"|format(row.retention_score) }}%</span></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Pass data to JS safely -->
+<script id="chartData" type="application/json">
+    {{ chart_data | tojson | safe }}
+</script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+
+{% else %}
+<div class="glass-panel" style="text-align: center; padding: 4rem 2rem;">
+    <div style="font-size: 4rem; margin-bottom: 1rem;">📊</div>
+    <h3 style="color: #e2e8f0; margin-bottom: 1rem;">Welcome to your Analytics Dashboard</h3>
+    <p style="color: #94a3b8; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Your dashboard is currently empty. To see the AI in action, you can either perform an individual student prediction, upload a dataset, or generate a sample dataset immediately.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="{{ url_for('upload_data') }}" class="btn btn-primary">Upload Dataset</a>
+        <a href="{{ url_for('predict') }}" class="btn" style="background: rgba(59, 130, 246, 0.1); border: 1px solid var(--primary-color); color: #93c5fd;">Individual Prediction</a>
+        <form action="{{ url_for('generate_mock') }}" method="POST" style="display: inline;">
+            <button type="submit" class="btn" style="background: rgba(139, 92, 246, 0.1); border: 1px solid var(--accent-color); color: #c4b5fd;">Quick Setup (Mock Data)</button>
+        </form>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

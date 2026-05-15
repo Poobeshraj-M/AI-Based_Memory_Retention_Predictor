@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Memory Retention Predictor{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="glass-panel login-card">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: 700;">AI Powered System</div>
+            <h2 class="text-gradient" style="font-size: 2rem; margin-bottom: 0.5rem;">Memory Retention Predictor</h2>
+            <p style="color: #94a3b8; font-size: 0.9rem;">Sign in to access student performance analytics</p>
+        </div>
+        <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
