@@ -2,95 +2,89 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)
+![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-1.0+-orange.svg)
 ![MySQL](https://img.shields.io/badge/MySQL-Supported-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-An advanced web application that leverages Artificial Intelligence to predict student memory retention scores based on study habits, previous academic performance, and sleep patterns.
+An intelligent web ecosystem designed to predict student memory retention using advanced machine learning. By analyzing variables such as **study hours**, **sleep duration**, and **academic history**, the system provides actionable insights for educators and students.
 
 ---
 
 ## 🚀 Key Features
 
-- **🤖 AI Predictions**: Get real-time retention scores using a trained machine learning model.
-- **📊 Analytics Dashboard**: Beautifully visualized data using Chart.js to track student performance trends.
-- **📁 Bulk Data Management**: Upload CSV/Excel datasets for batch predictions and historical analysis.
-- **🛡️ Secure Admin Panel**: Manage users, monitor system logs, and control data access.
-- **📄 PDF Reports**: Generate professional student profile and analytics reports.
+- **🤖 Machine Learning Engine**: Powered by **Random Forest Regression** for high-accuracy retention forecasting.
+- **📊 Interactive Analytics**: Real-time data visualization using **Chart.js**, featuring multi-metric comparisons.
+- **📁 Data Interoperability**: Seamlessly process bulk data via CSV/Excel uploads with automated field mapping.
+- **🛡️ Enterprise Security**: Role-Based Access Control (RBAC) with hashed passwords and detailed system audit logs.
+- **📄 Automated Reporting**: One-click PDF generation for individual student profiles and aggregate analytics.
 
 ---
 
 ## 📸 Screenshots
 
 ### 🖥️ Analytics Dashboard
-Visualize student metrics and predicted retention scores at a glance.
+Comprehensive overview of student metrics and AI predictions.
 ![Dashboard](screenshots/dashboard.png)
 
 ### 🔮 Prediction Interface
-Input student details to get instant AI-driven retention insights.
+Input interface for individual student assessment.
 ![Predict Page](screenshots/predict_page.png)
 
 ### 🔐 Secure Login
-Role-based access control for Admins and Staff.
+Authentication gateway for authorized personnel.
 ![Login Page](screenshots/login_page.png)
 
-### 🛠️ Admin Management
-System logs and user control panel.
+### 🛠️ Admin Panel
+System administration and audit log monitoring.
 ![Admin Panel](screenshots/admin_panel.png)
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Architecture & Tech Stack
 
-- **Backend**: Flask (Python)
-- **Frontend**: HTML5, Vanilla CSS, JavaScript
-- **Database**: MySQL (with SQLite fallback)
-- **Visualization**: Chart.js
-- **AI/ML**: Pandas, Scikit-learn
-- **Reporting**: FPDF
+### Backend Logic
+- **Core**: Python / Flask
+- **ML Model**: `RandomForestRegressor` (100 estimators)
+- **Data Handling**: Pandas & NumPy for vectorization and preprocessing.
+
+### Frontend Experience
+- **Styling**: Modern CSS with glassmorphism effects.
+- **Interactivity**: Dynamic JavaScript for real-time chart rendering and UI transitions.
+
+### Database Schema
+- **SQLAlchemy ORM**: Handles relations between `User`, `StudentRecord`, and `SystemLog`.
+- **Relational Integrity**: Foreign key constraints ensure data ownership and logging consistency.
 
 ---
 
-## ⚙️ Installation & Setup
+## ⚙️ Quick Start
 
-1. **Clone the repository**:
+1. **Clone & Install**:
    ```bash
    git clone https://github.com/Poobeshraj-M/AI-Based_Memory_Retention_Predictor.git
    cd AI-Based_Memory_Retention_Predictor
-   ```
-
-2. **Install dependencies**:
-   ```bash
    pip install -r requirements.txt
    ```
 
-3. **Environment Configuration**:
-   - Rename `.env.example` to `.env`.
-   - Update your MySQL credentials in the `.env` file.
+2. **Environment Configuration**:
+   - Copy `.env.example` to `.env`
+   - Configure your `MYSQL_PASSWORD` and other database settings.
 
-4. **Initialize Database**:
+3. **Initialize & Launch**:
    ```bash
-   python create_db.py
+   python create_db.py  # Create MySQL database
+   python app.py       # Start Flask server
    ```
-
-5. **Run the Application**:
-   ```bash
-   python app.py
-   ```
-   Access the app at `http://127.0.0.1:5000`.
 
 ---
 
-## 👤 Default Credentials
+## 👤 Project Author
 
-| Role | Username | Password |
-|------|----------|----------|
-| Admin | admin | admin123 |
+**Poobeshraj M**
+- **GitHub**: [@Poobeshraj-M](https://github.com/Poobeshraj-M)
+- **Role**: Lead Developer & AI Engineer
 
 ---
 
 ## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-Developed by [Poobeshraj M](https://github.com/Poobeshraj-M)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
